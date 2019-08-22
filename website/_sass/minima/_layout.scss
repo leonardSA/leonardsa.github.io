@@ -135,6 +135,7 @@
 .social-media-list {
   list-style: none;
   margin-left: 0;
+  text-align: center;
 }
 
 .footer-col-wrapper {
@@ -147,7 +148,8 @@
 .footer-col {
   width: -webkit-calc(100% - (#{$spacing-unit} / 2));
   width:         calc(100% - (#{$spacing-unit} / 2));
-  margin-bottom: $spacing-unit / 2;
+  margin-top: -$spacing-unit / 2; 
+  margin-bottom: -$spacing-unit; 
   padding-left: $spacing-unit / 2;
 }
 
