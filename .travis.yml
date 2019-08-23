@@ -1,0 +1,16 @@
+language: python
+python:
+    - 3.7.3
+
+install:
+    - "pip install gitpython"
+
+script:
+    - "python scripts/generate_about.py . ./resources/about_template.md 1"
+
+deploy:
+    provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    on:
+        branch: master
