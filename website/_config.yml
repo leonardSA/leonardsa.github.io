@@ -1,0 +1,57 @@
+###############################################################################
+#
+#   JEKYLL _CONFIG.YML 
+#   AUTHOR: JOSEPH LEONARD STEPHEN AUGUSTE
+#   LAST MODIFIED: 21/08/19
+#
+###############################################################################
+
+
+###############################################################################
+# SITE ATTRIBUTES
+###############################################################################
+
+title: Leonard's Website
+author: Joseph Leonard Stephen Auguste
+email: leonard.stephenauguste@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+ Welcome to my website! Its purpose is to showcase me, a little computer 
+ scientist. :sparkles: 
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+about:
+    title: About
+    link: /about/
+
+social_links:
+    linkedin: joseph-leonard-stephen-auguste-a90404189
+    github: leonardsa
+
+collections:
+    pages:
+        output: true
+        permalink: /:collection/:path
+
+###############################################################################
+# BUILD SETTINGS
+###############################################################################
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jemoji
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

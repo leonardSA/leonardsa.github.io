@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.pages.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {% assign sorted_pages = site.pages | sort %}
+      {%- for page in sorted_pages -%}
+      <li>
+        <h3>
+          <a class="post-link" href="{{ page.url | relative_url }}">
+            {{ page.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ page.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+</div>
