@@ -12,10 +12,11 @@
 ###############################################################################
 
 title: Leonard's Website
+author: Joseph Leonard Stephen Auguste
 email: leonard.stephenauguste@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
- Welcome to my website! I use it to showcase myself, it is useful!
- :sparkles:
+ Welcome to my website! Its purpose is to showcase me, a little computer 
+ scientist. :sparkles: 
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -24,6 +25,10 @@ social_links:
     linkedin: joseph-leonard-stephen-auguste-a90404189
     github: leonardsa
 
+collections:
+    pages:
+        output: true
+        permalink: /:collection/:path
 
 ###############################################################################
 # BUILD SETTINGS
