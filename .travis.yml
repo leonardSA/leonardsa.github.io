@@ -16,7 +16,7 @@ install:
     - "pip3 install gitpython --user"
 
 script:
-    - "python3 scripts/generate_about.py . ./resources/about_template.md 1"
+    - "python3 scripts/generate_about.py . ./resources/about_template.md 1 --branch $TRAVIS_BRANCH"
     - "./scripts/cibuild.sh"
 
 deploy:
