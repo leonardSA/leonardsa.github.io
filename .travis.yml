@@ -28,4 +28,4 @@ deploy:
         branch: develop
 
 after_success:
-    - script: "./scripts/deploy.sh"
+    - "./scripts/deploy.sh"
