@@ -18,12 +18,13 @@ FRONT_MATTER =  """ ---
                     ---
                 """
 
+
 def main():
     """
         Entry function.
     """
     args = parse_args()
-    commits = get_commits_list(args.path, args.nb_commits)
+    commits = get_commits_list(args.path, args.branch, args.nb_commits)
     if not commits:
         return 1
     footer = generate_footer(commits)
@@ -39,14 +40,16 @@ def parse_args():
     parser.add_argument('template', help='Filename to about\'s future contents')
     parser.add_argument('nb_commits', type=int,
                         help='Number of commits to show (at least 1)')
+    parser.add_argument('--branch', default="master",
+                        help='Select branch for commits')
     args = parser.parse_args()
     args
     return args
 
 
-def get_commits_list(repo_path: str, nb_commits: int) -> List:
+def get_commits_list(repo_path: str, branch: str, nb_commits: int) -> List:
     """
-        Get the 5 last commits and their dates.
+        Get the nb_commits last commits and their dates.
         Formats the commits' data.
         Returns list(sha, message, date).
     """
