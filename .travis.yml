@@ -2,6 +2,10 @@ language: ruby
 rvm:
     - 2.6.3
 
+branches:
+    except:
+        - master
+
 before_install:
     - "sudo apt update"
     - "sudo apt install python3.5"
@@ -21,4 +25,7 @@ deploy:
     github-token: $GITHUB_TOKEN
     local_dir: _site
     on:
-        branch: master
+        branch: develop
+
+after_success:
+    - script: "./scripts/deploy.sh"
