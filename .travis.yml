@@ -12,7 +12,7 @@ install:
 
 script:
     - "python3 scripts/generate_about.py . ./resources/about_template.md 1"
-    - "./script/cibuild.sh"
+    - "./scripts/cibuild.sh"
 
 deploy:
     provider: pages
