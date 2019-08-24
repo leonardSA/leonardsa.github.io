@@ -4,9 +4,10 @@ rvm:
 
 before_install:
     - "sudo apt install python3.5"
+    - "sudo apt install python3-pip"
 
 install:
-    - "pip install gitpython --user"
+    - "pip3 install gitpython --user"
 
 script:
     - "python3 scripts/generate_about.py . ./resources/about_template.md 1"
