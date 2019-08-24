@@ -55,7 +55,7 @@ def get_commits_list(repo_path: str, branch: str, nb_commits: int) -> List:
     """
     commits = []
     repo = git.Repo(repo_path)
-    for c in repo.iter_commits('master', max_count=nb_commits):
+    for c in repo.iter_commits(branch, max_count=nb_commits):
         sha = c.hexsha[:7]
         msg = c.message.split('\n')[0]
         date = time.strftime("%d/%m/%y @ %H:%M", time.gmtime(c.committed_date))
