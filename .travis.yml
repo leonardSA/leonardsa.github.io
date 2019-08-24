@@ -4,9 +4,11 @@ python:
 
 install:
     - "pip install gitpython"
+    - "gem install bundler jekyll"
 
 script:
     - "python scripts/generate_about.py . ./resources/about_template.md 1"
+    - "bundle exec jekyll build"
 
 deploy:
     provider: pages
