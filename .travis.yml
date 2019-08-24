@@ -19,13 +19,5 @@ script:
     - "python3 scripts/generate_about.py . ./resources/about_template.md 1 --branch $TRAVIS_BRANCH"
     - "./scripts/cibuild.sh"
 
-deploy:
-    provider: pages
-    skip-cleanup: true
-    github-token: $GITHUB_TOKEN
-    local_dir: _site
-    on:
-        branch: develop
-
 after_success:
     - "./scripts/deploy.sh"
