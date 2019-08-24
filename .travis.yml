@@ -6,7 +6,7 @@ before_install:
     - "sudo apt install python3.5"
 
 install:
-    - "pip3 install gitpython --user"
+    - "pip install gitpython --user"
 
 script:
     - "python3 scripts/generate_about.py . ./resources/about_template.md 1"
