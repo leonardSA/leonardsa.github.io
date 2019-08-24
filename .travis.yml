@@ -8,6 +8,7 @@ before_install:
     - "sudo apt install python3-pip"
 
 install:
+    - "bundle install"
     - "pip3 install gitpython --user"
 
 script:
