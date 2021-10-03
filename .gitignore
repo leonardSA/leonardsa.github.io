@@ -1,0 +1,7 @@
+# ignore jekyll generated files
+_site
+.sass-cache
+
+# ignore vim 
+*swo
+*swp
