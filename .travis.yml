@@ -8,13 +8,13 @@ branches:
 
 before_install:
     - "sudo apt update"
-    - "sudo apt install python3.5"
+    - "sudo apt install python3.9"
     - "sudo apt install python3-pip"
     - "pip3 install --upgrade pip"
 
 install:
     - "bundle install"
-    - "pip3 install gitpython --user"
+    - "pip3 install GitPython --user"
 
 script:
     - "python3 scripts/generate_about.py . ./resources/about_template.md 1 --branch $TRAVIS_BRANCH"
