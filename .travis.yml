@@ -17,7 +17,7 @@ branches:
         - master
 
 before_install:
-    - "cd scripts ; docker image build -t ${IMGNAME}"
+    - "cd scripts ; docker image build -t ${IMGNAME} ."
 
 install:
     - "bundle install"
