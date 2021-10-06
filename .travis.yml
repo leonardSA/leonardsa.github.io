@@ -17,14 +17,14 @@ branches:
         - master
 
 before_install:
-    - "cd scripts ; docker image build -t ${IMGNAME} ."
+    - "cd scripts ; docker image build -t ${IMGNAME} . ; cd .."
 
 install:
     - "bundle install"
 
 script:
     # run generate_about.py with bind to recover generated about.md
-    - "docker run --mount type=bind,source=\"$(pwd)\",target=/tmp/transfer ${IMGNAME}"
+    - "docker run -e TRAVIS_BRANCH=$TRAVIS_BRANCH --mount type=bind,source=\"$(pwd)\",target=/tmp/transfer ${IMGNAME}"
     # run website generation
     - "./scripts/cibuild.sh"
 
