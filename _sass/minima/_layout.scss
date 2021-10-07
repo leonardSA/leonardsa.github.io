@@ -302,3 +302,14 @@
     width:         calc(50% - (#{$spacing-unit} / 2));
   }
 }
+
+
+/* USER CODE */
+
+.justify-text {
+    text-align: justify;
+}
+
+.center-text {
+    text-align: center;
+}
