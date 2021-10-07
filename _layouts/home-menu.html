@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {%- assign page_subcategory = page.subcategory -%}
+
+  {{ content }}
+
+  {%- if site.pages.size > 0 -%}
+    <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
+    <ul class="post-list">
+      {% assign sorted_pages = site.pages | sort %}
+      {%- for page in sorted_pages -%}
+      {%- if page.category == page_subcategory -%}
+      <li>
+        <h3>
+          {%- if page.date -%}
+          <div class="post-meta">
+              <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                {{ page.date | date: date_format }}
+              </time>
+          </div>
+          {%- endif -%}
+          <a class="post-link" href="{{ page.url | relative_url }}">
+            {{ page.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ page.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+</div>
