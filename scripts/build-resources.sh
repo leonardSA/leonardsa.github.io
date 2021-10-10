@@ -6,7 +6,6 @@
 # Last Modified Date: 10.10.2021
 # Last Modified By  : leonardSA <leonard.stephenauguste@gmail.com>
 
-ROOT_DIR=..
 PAGES_DIR=_pages # dir containing pages with resources
 PLANTUML_JAR=./scripts/lib/plantuml.1.2021.12.jar # relative to ROOT_DIR
 
@@ -18,7 +17,6 @@ PLANT_CMD="java -Djava.awt.headless=true -jar $PLANTUML_JAR -Tpng ARG"
 FILETYPE=(gv uml)
 COMMANDS=("$DOT_CMD" "$PLANT_CMD")
 
-cd $ROOT_DIR
 # for every filetype
 for i in "${!FILETYPE[@]}"; do  
     # search directory for files with the filetype and compile them
@@ -29,6 +27,7 @@ for i in "${!FILETYPE[@]}"; do
         else
             printf "\033[1;32m[OK] %s : %s\n\033[0m" $0 $file
             rm $file.log
+            exit 1
         fi
     done
 done
