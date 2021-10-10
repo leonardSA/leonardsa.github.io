@@ -3,7 +3,7 @@
 # File              : build-resources.sh
 # Author            : leonardSA <leonard.stephenauguste@gmail.com>
 # Date              : 10.10.2021
-# Last Modified Date: 10.10.2021
+# Last Modified Date: 11.10.2021
 # Last Modified By  : leonardSA <leonard.stephenauguste@gmail.com>
 
 PAGES_DIR=_pages # dir containing pages with resources
@@ -24,10 +24,10 @@ for i in "${!FILETYPE[@]}"; do
         ${COMMANDS[i]/ARG/"$file"} 2> $file.log  # substitute and execute
         if [ $? -ne 0  ]; then
             1>&2 printf "\033[1;31m[KO] %s : %s\n\033[0m" $0 $file
+            exit 1
         else
             printf "\033[1;32m[OK] %s : %s\n\033[0m" $0 $file
             rm $file.log
-            exit 1
         fi
     done
 done
