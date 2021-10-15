@@ -6,8 +6,8 @@ rvm:
     - 2.6.3
 
 env:
-    # use of docker for python3.8 for running generate_about.py
-    - IMGNAME=leonardsa/generate-about:1.0
+    # use of docker for python3.8 for running page modifying python scripts
+    - IMGNAME=leonardsa/modify-pages:1.0
 
 services:
     - docker
