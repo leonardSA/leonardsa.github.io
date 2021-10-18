@@ -65,12 +65,19 @@ def titles_get(text: str) -> List:
     titles = []
     finder = re.compile('^#+')
 
-    count = 0   # line index
-    for line in text:
+    no = 0  # line index
+    while no < len(text):
+        line = text[no]
+        if '```' in line:       # avoid possible code comments
+            while True:         # skip lines until next triple b-quotes
+                no = no + 1
+                if '```' in text[no]:
+                    line = text[no]
+                    break
         res = finder.match(line)
         if res is not None:
-            titles.append((count, line))
-        count = count + 1
+            titles.append((no, line))
+        no = no + 1
 
     return titles
 
