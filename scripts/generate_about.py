@@ -1,9 +1,11 @@
-"""
-    Generate about.md.
-
-    Author: Joseph Leonard Stephen Auguste
-    Creation date: 23/08/2019
-"""
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# File              : generate_about.py
+# Author            : leonardSA <leonard.stephenauguste@gmail.com>
+# Date              : 23.08.2019
+# Last Modified Date: 15.10.2021
+# Last Modified By  : leonardSA <leonard.stephenauguste@gmail.com>
+# Description       : Generate website's about page.
 
 import os
 import git
@@ -11,18 +13,15 @@ import time
 import argparse
 from typing import List
 
-FRONT_MATTER =  """ ---
-                    layout: page
-                    title: About
-                    permalink: /about/
-                    ---
-                """
+FRONT_MATTER = """ ---
+                   layout: page
+                   title: About
+                   permalink: /about/
+                   ---
+               """
 
 
 def main():
-    """
-        Entry function.
-    """
     args = parse_args()
     commits = get_commits_list(args.path, args.branch, args.nb_commits)
     if not commits:
@@ -33,25 +32,27 @@ def main():
 
 
 def parse_args():
-    """ Parses arguments.
+    """
+    Parses arguments.
     """
     parser = argparse.ArgumentParser(description='Generate about.md.')
     parser.add_argument('path', help='Path for about.md')
-    parser.add_argument('template', help='Filename to about\'s future contents')
+    parser.add_argument('template',
+                        help='Filename to about\'s future contents')
     parser.add_argument('nb_commits', type=int,
                         help='Number of commits to show (at least 1)')
     parser.add_argument('--branch', default="master",
                         help='Select branch for commits')
     args = parser.parse_args()
-    args
     return args
 
 
 def get_commits_list(repo_path: str, branch: str, nb_commits: int) -> List:
     """
-        Get the nb_commits last commits and their dates.
-        Formats the commits' data.
-        Returns list(sha, message, date).
+    Get the nb_commits last commits and their dates.
+    Formats the commits' data.
+
+    Returns: list(sha, message, date).
     """
     commits = []
     repo = git.Repo(repo_path)
@@ -65,9 +66,9 @@ def get_commits_list(repo_path: str, branch: str, nb_commits: int) -> List:
 
 def generate_footer(commits: List) -> List:
     """
-        Generate footer with commits.
+    Generate footer with commits.
 
-        Return footer as List of String.
+    Returns: footer as List of String.
     """
     footer = []
     first = commits.pop(0)
@@ -78,13 +79,16 @@ def generate_footer(commits: List) -> List:
         return footer
     footer.append("**Last commits:**\n")
     for c in commits:
-        footer.append("- **{0}:** {2:<60} ({1}) \n".format(c['sha'], c['date'], c['msg']))
+        footer.append("- **{0}:** {2:<60} ({1}) \n".format(c['sha'],
+                                                           c['date'],
+                                                           c['msg']))
     return footer
 
 
-def generate_about_md(path: str, header: str, footer: str, template: str) -> None:
+def generate_about_md(path: str, header: str,
+                      footer: str, template: str) -> None:
     """
-        Write about.md with a header, a template and a footer.
+    Write about.md with a header, a template and a footer.
     """
     about = [line.strip() + '\n' for line in FRONT_MATTER.split('\n')]
     with open(template, 'r') as f:
