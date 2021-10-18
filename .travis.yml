@@ -5,6 +5,12 @@ language: ruby
 rvm:
     - 2.6.3
 
+addons:
+    apt:
+        packages:
+            - default-jre-headless  # jvm for plantuml
+            - graphviz              # graphviz for dot and plantuml
+
 env:
     # use of docker for python3.8 for running generate_about.py
     - IMGNAME=leonardsa/generate-about:1.0
@@ -25,6 +31,8 @@ install:
 script:
     # run generate_about.py with bind to recover generated about.md
     - "docker run -e TRAVIS_BRANCH=$TRAVIS_BRANCH --mount type=bind,source=\"$(pwd)\",target=/tmp/transfer ${IMGNAME}"
+    # build resources
+    - "./scripts/build-resources.sh"
     # run website generation
     - "./scripts/cibuild.sh"
 
