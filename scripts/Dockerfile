@@ -13,6 +13,7 @@ COPY    modify_pages.sh     ./tmp/modify_pages.sh
 # scripts called in main script
 COPY    generate_about.py   ./tmp/generate_about.py
 COPY    generate_toc.py     ./tmp/generate_toc.py
+COPY    generate_url.py     ./tmp/generate_url.py
 
 # copy resource
 COPY    ./resources/about_template.md ./tmp/about_template.md
