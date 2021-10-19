@@ -3,6 +3,40 @@ layout: default
 ---
 
 <div class="home">
+    {%- if site.pages.size > 0 -%}
+        <!-- search for latest created article and latest modified --> 
+        {% assign pages = site.pages %}
+        {% assign latest_created = pages[0] %}
+        {% assign latest_modified = pages[0] %}
+        {%- for page in pages -%}
+            {%- if page.category != "menu" -%}
+                {%- if page.date > latest_created.date -%}
+                    {% assign latest_created = page %} 
+                {%- endif -%}
+                {%- if page.modified > latest_modified.modified -%}
+                    {% assign latest_modified = page %} 
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+        <h3> 
+            Latest article:
+            <a href="{{ latest_created.url | relative_url }}">
+                     {{ latest_created.title | escape }} </a>
+                <time class="dt-published post-meta" datetime="{{ latest_created.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                    {{ latest_created.date | date: date_format }}
+                </time>
+            <br>
+            Latest updated article:
+            <a href="{{ latest_modified.url | relative_url }}">
+                     {{ latest_modified.title | escape }} </a>
+                <time class="dt-published post-meta" datetime="{{ latest_modified.modified | date_to_xmlschema }}" itemprop="datePublished">
+                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                    {{ latest_modified.modified | date: date_format }}
+                </time>
+        </h3>
+    {%- endif -%}
+
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
