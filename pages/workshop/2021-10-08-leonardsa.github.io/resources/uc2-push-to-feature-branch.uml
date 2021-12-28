@@ -1,0 +1,22 @@
+@startuml
+
+actor "Dev" as dev
+participant "GitHub" as git
+participant "Travis CI" as travis
+participant "Docker" as docker
+participant "Jekyll" as jekyll
+
+dev     -> git      : pushes to branch develop
+git     -> git      : register modifications
+git     -> travis   : trigger build
+travis  -> travis   : setup
+travis  -> travis   : compile resources
+travis  -> docker   : execute container
+docker  -> docker   : generate about page
+docker --> travis   : ok
+travis  -> jekyll   : execute jekyll
+jekyll  -> jekyll   : generating website
+jekyll --> travis   : ok
+travis --> dev      : ok
+
+@enduml

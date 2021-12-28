@@ -1,0 +1,4 @@
+@startuml
+class "Category" as category
+category "*" --> "1" category : is a subcategory of 
+@enduml

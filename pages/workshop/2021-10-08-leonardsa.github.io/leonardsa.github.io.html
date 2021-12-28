@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>leonardsa.github.io | Leonard’s Website</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="leonardsa.github.io" />
+<meta name="author" content="Joseph Leonard Stephen Auguste" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Link to repository | Travis CI’s build status" />
+<meta property="og:description" content="Link to repository | Travis CI’s build status" />
+<link rel="canonical" href="/pages/workshop/2021-10-08-leonardsa.github.io/leonardsa.github.io" />
+<meta property="og:url" content="/pages/workshop/2021-10-08-leonardsa.github.io/leonardsa.github.io" />
+<meta property="og:site_name" content="Leonard’s Website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-10-08T00:00:00+00:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Joseph Leonard Stephen Auguste"},"description":"Link to repository | Travis CI’s build status","@type":"BlogPosting","headline":"leonardsa.github.io","dateModified":"2021-10-08T00:00:00+00:00","datePublished":"2021-10-08T00:00:00+00:00","url":"/pages/workshop/2021-10-08-leonardsa.github.io/leonardsa.github.io","mainEntityOfPage":{"@type":"WebPage","@id":"/pages/workshop/2021-10-08-leonardsa.github.io/leonardsa.github.io"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Leonard's Website" /></head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Leonard's Website</a>
+        <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+            <div class="trigger">
+                <a class="page-link" href="/about/">About</a>
+            </div>
+        </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">leonardsa.github.io</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-10-08T00:00:00+00:00" itemprop="datePublished">Created on:
+        Oct 8, 2021
+        <br> 
+        Last updated on:
+        Oct 19, 2021.
+      </time></p>
+  </header>
+
+  <div class="post-content e-content justify-text" itemprop="articleBody">
+    <p><strong><a href="https://github.com/leonardSA/leonardsa.github.io">Link to repository</a> |
+<a href="https://app.travis-ci.com/github/leonardSA/leonardsa.github.io">Travis CI’s build status</a></strong></p>
+
+<blockquote>
+  <p><em>I first built this website during the summer of 2019. I was looking for projects 
+to work on and stumbled upon Github Pages. Any good computer scientist has his own website
+but web development is not my cup of tea. Jekyll automated it enough to suit my needs and 
+I created the website.
+However, I forgot about it all
+once it was built and had set up with Travis CI for deployment (which was the fun part). 
+Two years later, I decided to give it another go. It was not easy as after
+not having been maintained for so long some dependency issues had arisen. To deal 
+with those I got to learn new tools like Docker. It made the project more
+interesting. This article is more or less documentation on how this website is set up.</em></p>
+
+  <p><em>PS: This is the first article that this website has ever hosted (apart from test
+ones)!</em> <img class="emoji" title=":man_technologist:" alt=":man_technologist:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f4bb.png" height="20" width="20"></p>
+
+  <p><em>TL;DR: Jekyll-based website hosted by GitHub 
+and used in conjonction with Travis CI to test, build, generate content
+and deploy website.</em></p>
+</blockquote>
+
+<h2 id="table-of-contents">Table of contents<a name="30"></a>
+</h2>
+
+<ol>
+  <li><a href="#30">Table of contents</a></li>
+  <li><a href="#34">Summary</a></li>
+  <li><a href="#52">Use Cases</a></li>
+  <li><a href="#99">Tools</a></li>
+  <li><a href="#116">GitHub</a></li>
+  <li>
+<a href="#127">Jekyll</a>
+    <ul>
+      <li>6.1. <a href="#131">Generalities</a>
+</li>
+      <li>6.2. <a href="#155">Specificities: categories</a>
+</li>
+      <li>6.3. <a href="#171">Dependabot</a>
+</li>
+    </ul>
+  </li>
+  <li><a href="#188">Travis CI</a></li>
+  <li>
+<a href="#202">Scripts</a>
+    <ul>
+      <li>8.1. <a href="#212">Website build related scripts</a>
+</li>
+      <li>8.2. <a href="#221">Resource build related scripts</a>
+</li>
+      <li>8.3. <a href="#229">Content build related scripts</a>
+</li>
+      <li>8.4. <a href="#239">Docker </a><a name="sec:docker"></a>
+</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="summary">Summary<a name="34"></a>
+</h2>
+
+<p>Use cases:</p>
+<ul>
+  <li>uc1: push to develop</li>
+  <li>uc2: push to feature branch</li>
+  <li>uc3: security bot auto-resolves opened merge requests</li>
+</ul>
+
+<p>Tools:</p>
+<ul>
+  <li>Jekyll</li>
+  <li>Travis CI</li>
+  <li>GitHub</li>
+  <li>Docker</li>
+  <li>Dependabot</li>
+</ul>
+
+<blockquote>
+  <p>Note to self: the <code class="highlighter-rouge">GITHUB_TOKEN</code> environment variable is a token that need to
+be created in GitHub and set in Travis CI. It is for allowing Travis CI to 
+push to master.</p>
+</blockquote>
+
+<h2 id="use-cases">Use Cases<a name="52"></a>
+</h2>
+
+<p>The following sequence diagrams illustrate the desired workflow for maintaining 
+this website.</p>
+
+<p>This first use case is the most important of our DevOps setup: 
+<code class="highlighter-rouge">uc1:push to develop</code>. I wanted to have control over the deployment flow to be 
+able to use scripts to generate content. Plus, I wanted the master 
+branch to remain “clean”, only the website’s compiled content should be commited 
+as it would be modified every push.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UC1: Push to develop
+--------------------
+1. The developer pushes to the branch develop on GitHub.
+2. Modifications are versioned.
+3. Modifications are tested.
+4. Modifications are deployed if tests have passed.
+</code></pre></div></div>
+
+<p><img src="./resources/uc1-push-to-develop.png" alt="Sequence Diagram" title="uc1: push to develop"></p>
+
+<p>The second use case is very similar to the first one: <code class="highlighter-rouge">uc2: push to feature branch</code>.
+When we push to any other branch than develop or master, we should build the website 
+in order to ensure we have not broken anything, but we mustn’t deploy the website.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UC2: Push to feature branch
+---------------------------
+1. The developer pushes to a feature branch on GitHub:
+    - feature branch is NOT master
+    - feature branch is NOT develop
+2. Modifications are versioned.
+3. Modifications are tested.
+</code></pre></div></div>
+
+<p><img src="./resources/uc2-push-to-feature-branch.png" alt="Sequence Diagram" title="uc2: push to feature branch"></p>
+
+<p>Still have to figure out <code class="highlighter-rouge">uc3:dependabot auto-resolves opened merge requests</code>. 
+<img class="emoji" title=":robot:" alt=":robot:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f916.png" height="20" width="20"> <img class="emoji" title=":robot:" alt=":robot:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f916.png" height="20" width="20"> <img class="emoji" title=":fire:" alt=":fire:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"> <img class="emoji" title=":robot:" alt=":robot:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f916.png" height="20" width="20"></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UC3: Security bot auto-resolves opened merge requests
+-------------------------------------
+1. Figure it out.
+</code></pre></div></div>
+
+<h2 id="tools">Tools<a name="99"></a>
+</h2>
+
+<p>As you can have seen from the use cases, this website makes use of a multitude 
+of tools:</p>
+<ul>
+  <li>
+<code class="highlighter-rouge">Jekyll</code> for generating the website</li>
+  <li>
+<code class="highlighter-rouge">Travis CI</code> for testing the modifications and deploying the website</li>
+  <li>
+<code class="highlighter-rouge">GitHub</code> for hosting the website (and versioning obviously)</li>
+  <li>
+<code class="highlighter-rouge">Docker</code> for running a simple python script to generate the <strong>About</strong> page (which 
+you should check out by the way)</li>
+  <li>
+<code class="highlighter-rouge">Dependabot</code> for dealing with security issues</li>
+</ul>
+
+<p>These tools and how they were used, will be shortly explained 
+in the following sections. Note that the section on Dependabot is not ready yet. 
+It makes a pull requests on master, however we want it to make a pull request and 
+merge on develop for Travis CI to build it. This is something that I need figure 
+out how to configure.</p>
+
+<h2 id="github">GitHub<a name="116"></a>
+</h2>
+
+<p>The only thing to point out is that two branches are essential:</p>
+<ul>
+  <li>
+<strong>master</strong>: it contains the website’s generated code ; pushes should only 
+come from Travis CI</li>
+  <li>
+<strong>develop</strong>: it contains the ingredients required to generate the website ; 
+we push there in order to apply changes to the website</li>
+</ul>
+
+<blockquote>
+  <p><em>I wanted a clean structure for the repository and did not like the lack of 
+control I had over the branch <strong>gh-pages</strong></em>.</p>
+</blockquote>
+
+<h2 id="jekyll">Jekyll<a name="127"></a>
+</h2>
+
+<p><strong><a href="http://jekyllrb.com/">Jekyll official website</a></strong></p>
+
+<h3 id="generalities">Generalities<a name="131"></a>
+</h3>
+
+<p>I got started with Jekyll watching 
+<a href="https://www.youtube.com/watch?v=EvYs1idcGnM&amp;list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq">Bill Raymond’s video guide</a>.
+It is quite informative and espacially on the basics.</p>
+
+<p>Jekyll generates our website. Here is a set of the commands we actually use:</p>
+<ul>
+  <li>
+<code class="highlighter-rouge">bundle exec jekyll build</code>: builds the website</li>
+  <li>
+<code class="highlighter-rouge">bundle install</code>: install missing gems</li>
+  <li>
+<code class="highlighter-rouge">bundle update</code>: update gems</li>
+  <li>
+<code class="highlighter-rouge">bundle exec jekyll serve --livereload</code>: build site and service at localhost port
+4000</li>
+</ul>
+
+<p>Jekyll’s website structure also plays a significant role enough that we have to 
+adress it:</p>
+<ul>
+  <li>
+<strong>index.md</strong>: the index page of the website</li>
+  <li>
+<strong>assets</strong>: css-related items such as typefonts</li>
+  <li>
+<strong>_config.yml</strong>: configuration file for Jekyll</li>
+  <li>
+<strong>_pages</strong>: directory containing all pages to be build for the website</li>
+  <li>
+<strong>_sass</strong>: scss for the website</li>
+  <li>
+<strong>_layouts</strong>: HTML layouts for the different types of pages e.g home, page, post</li>
+  <li>
+<strong>_includes</strong>: HTML to-be included code e.g header, footer</li>
+  <li>
+<strong>_site</strong>: directory containing the generated website</li>
+</ul>
+
+<h3 id="specificities-categories">Specificities: categories<a name="155"></a>
+</h3>
+
+<p>Jekyll has been customed to order the different posts using the tags 
+category and subcategory. This allows us to filter the articles we display by
+category or to set up menus easily. It also forces a tree structure on our 
+articles.</p>
+
+<p align="center">
+<img alt="Class Diagram" title="Jekyll pages ordering" src="./resources/jekyll-pages-ordering.png">
+</p>
+
+<p>The following code is the layout <code class="highlighter-rouge">home-menu.html</code>. The implementation of the category 
+concept is a simple conditional test that can be seen on line 15.</p>
+
+<script src="https://gist.github.com/leonardSA/77505e1a7ce036e12f2768a93fea6751.js"></script>
+
+<h3 id="dependabot">Dependabot<a name="171"></a>
+</h3>
+
+<p><strong><a href="https://dependabot.com/">Dependabot official website</a></strong></p>
+
+<p><a href="https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/about-dependabot-version-updates">GitHub-native Dependabot documentation</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ________________
+&lt; Figure it out! &gt;
+ ----------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+</code></pre></div></div>
+
+<h2 id="travis-ci">Travis CI<a name="188"></a>
+</h2>
+
+<p><strong><a href="https://docs.travis-ci.com/">Travis CI official documentation</a></strong></p>
+
+<p>Travis triggers a build on every branch but master (which contains only the 
+website’s generated code). It also pushes to master - deploys the website - if 
+the branch is develop.</p>
+
+<p>In a build travis will:</p>
+<ol>
+  <li>
+<strong>Setup</strong>: install dependencies, configure environment etc.</li>
+  <li>
+<strong>Run the scripts</strong>: build the resources, modify and generate markdown files 
+and build the website.</li>
+  <li>
+<strong>Deploy</strong>: push generated website to master if build passed and branch is develop.</li>
+</ol>
+
+<h2 id="scripts">Scripts<a name="202"></a>
+</h2>
+
+<p>Different types of scripts can be noted:</p>
+<ul>
+  <li>website build related scripts e.g. <code class="highlighter-rouge">cibuild.sh</code>
+</li>
+  <li>resource build related scripts e.g. <code class="highlighter-rouge">build-resources.sh</code>
+</li>
+  <li>content build related scripts e.g. <code class="highlighter-rouge">generate_about.py</code>
+</li>
+</ul>
+
+<p>Note that the python scripts requiring a recent version, they are run through 
+Docker. More details can be found in the <a href="#sec:docker">section on Docker</a>.</p>
+
+<h3 id="website-build-related-scripts">Website build related scripts<a name="212"></a>
+</h3>
+
+<p>The scripts concerned are all about building and deploying the website.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Script</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">cibuild.sh</code></td>
+      <td>Generates the website’s code.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">deploy.sh</code></td>
+      <td>Pushes website’s generated code to master.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="resource-build-related-scripts">Resource build related scripts<a name="221"></a>
+</h3>
+
+<p>The scripts concerned all about building versionable resources (e.g UML diagram).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Script</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">build-resources.sh</code></td>
+      <td>Builds Graphviz graphs and PlantUML diagrams.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="content-build-related-scripts">Content build related scripts<a name="229"></a>
+</h3>
+
+<p>The scripts concerned all about modifying or generating markdown content.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Script</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">modify_pages.sh</code></td>
+      <td>Calls the scripts listed below.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">generate_about.py</code></td>
+      <td>Generates the about.md file with the last commit’s info.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">generate_toc.py</code></td>
+      <td>Generates and inserts a table of contents in a markdown file.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="docker-">Docker <a name="sec:docker"></a><a name="239"></a>
+</h3>
+
+<p>I decided to use Docker for running python scripts as the version fetched by apt 
+in Travis does not meet the requirements of some of the modules I use in this 
+project (e.g. <a href="https://pypi.org/project/GitPython/">GitPython</a>).</p>
+
+<p>Docker will run the script <code class="highlighter-rouge">modify_pages.sh</code>. The script itself will make multiple 
+calls to the python scripts whose purpose is to build content. These scripts being:
+<code class="highlighter-rouge">generate_about.py</code> and <code class="highlighter-rouge">generate_toc.py</code>.</p>
+
+<p>When a Docker container is runned, it creates its own environment. The workdir 
+is <code class="highlighter-rouge">/tmp/</code> and it is the directory from which the scripts will are runned. 
+Therefore, a copy instruction for every concerned script must be added to the 
+Dockerfile.</p>
+
+<p>We also want to recover the files that have been generated. We need to bind a 
+directory of this environment to the root of our repository. In order to achieve 
+this we will use the option <code class="highlighter-rouge">--mount</code> to bind the root to the directory 
+<code class="highlighter-rouge">/tmp/transfer</code> of the container’s environment.</p>
+
+<blockquote>
+  <p>A question that might have arisen for you is “If you’ve bound the repository’s 
+root why bother copy the scripts at all ?”
+The two main reasons I want to keep the COPY instruction in my Dockerfile are:</p>
+  <ul>
+    <li>lisibility: the scripts copied is a list of the scripts to be used</li>
+    <li>the workdir: all the scripts are called from one directory despite of how 
+I may rearrange the scripts directory of the project in the future</li>
+  </ul>
+</blockquote>
+
+<p>In order to run the container Travis will use the following command.
+You can note that I have set the environment variable <code class="highlighter-rouge">TRAVIS_BRANCH</code> which is 
+the name of the branch on which Travis is working.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Binds the directory transfer to the repository's root directory </span>
+docker run <span class="nt">-e</span> <span class="nv">TRAVIS_BRANCH</span><span class="o">=</span><span class="nv">$TRAVIS_BRANCH</span> <span class="nt">--mount</span> <span class="se">\</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">bind</span>,source<span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">"</span>,target<span class="o">=</span>/tmp/transfer <span class="k">${</span><span class="nv">IMGNAME</span><span class="k">}</span>
+</code></pre></div></div>
+<p>And this is the structure that can be expected from the running container’s 
+workdir point of view:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Docker's workdir's directories</span>
+<span class="nb">.</span>   <span class="c"># this is /tmp/</span>
+├── about_template.md   <span class="c"># copied resources and scripts</span>
+├── generate_about.py   <span class="c"># all scripts are called from Docker's point of view</span>
+├── generate_toc.py     
+├── modify_pages.sh
+└── transfer            <span class="c"># repository root from Docker's point of view</span>
+    ├── 404.html
+    ├── Gemfile
+    ├── Gemfile.lock
+    ├── _config.yml
+    ├── _includes
+    ├── _layouts
+    ├── _pages
+    ├── _sass
+    ├── about.md
+    ├── assets
+    ├── index.md
+    └── scripts
+</code></pre></div></div>
+
+  </div>
+<a class="u-url" href="/pages/workshop/2021-10-08-leonardsa.github.io/leonardsa.github.io" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col one-half">
+      <!-- <h2 class="footer-heading">Leonard&#39;s Website</h2> -->
+        <ul class="contact-list">
+          <li class="p-name">Joseph Leonard Stephen Auguste</li>
+<li><a class="u-email" href="mailto:leonard.stephenauguste@gmail.com">leonard.stephenauguste@gmail.com</a></li>
+<br>
+
+            <div class="social-links">
+<ul class="social-media-list">
+<li><a href="https://github.com/leonardsa" title="leonardsa"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li>
+<li><a href="https://www.linkedin.com/in/joseph-leonard-stephen-auguste-a90404189" title="joseph-leonard-stephen-auguste-a90404189"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg></a></li>
+</ul>
+</div>
+        </ul>
+      </div>
+
+      <div class="footer-col one-half center-text">
+        <p>Welcome to my website! Its purpose is to showcase me, a little computer  scientist. <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
