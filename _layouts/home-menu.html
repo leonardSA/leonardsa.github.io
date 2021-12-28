@@ -14,7 +14,7 @@ layout: default
   {%- if site.pages.size > 0 -%}
     <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
     <ul class="post-list">
-      {% assign sorted_pages = site.pages | sort %}
+      {% assign sorted_pages = site.pages | sort | reverse %}
       {%- for page in sorted_pages -%}
       {%- if page.category == page_subcategory -%}
       <li>
